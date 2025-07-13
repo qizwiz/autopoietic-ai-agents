@@ -362,12 +362,12 @@ class TrulyAutonomousAgent {
   }
 
   async apiCall(method, url, data = null) {
-    const apiKey = await getApiKey();
+    const token = await getApiKey();
     const options = {
       method,
       headers: {
         'Content-Type': 'application/json',
-        'api-key': apiKey
+        'Authorization': `Bearer ${token}`
       }
     };
 

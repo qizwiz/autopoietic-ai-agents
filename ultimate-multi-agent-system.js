@@ -470,11 +470,11 @@ class UltimateMultiAgentSystem {
     ];
     
     const endings = [
-      ' Let\\'s go!',
-      ' That\\'s fire!',
+      ' Let\'s go!',
+      ' That\'s fire!',
       ' Clean code, boys!',
       ' Ship it!',
-      ' We\\'re cooking!',
+      ' We\'re cooking!',
       ' This slaps!'
     ];
     
@@ -524,12 +524,12 @@ class UltimateMultiAgentSystem {
   }
 
   async apiCall(method, url, data = null) {
-    const apiKey = await getApiKey();
+    const token = await getApiKey();
     const options = {
       method,
       headers: {
         'Content-Type': 'application/json',
-        'api-key': apiKey
+        'Authorization': `Bearer ${token}`
       }
     };
 
